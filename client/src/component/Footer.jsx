@@ -9,31 +9,31 @@ export default function Footer() {
         <div className="row justify-content-center">
           <div className="col-md-9 text-center">
             <div className="footer-site-logo mb-4">
-              <a href="#" className="navbar-brand">
+              <a href="error" className="navbar-brand">
                 <img src={Logo} alt="logo" className="img-responsive" />
               </a>
             </div>
             <ul className="list-unstyled nav-links mb-5">
               <li>
-                <a href="#">About</a>
+                <a href="error">About</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="error">Services</a>
               </li>
               <li>
-                <a href="#">Press</a>
+                <a href="error">Press</a>
               </li>
               <li>
-                <a href="#">Careers</a>
+                <a href="error">Careers</a>
               </li>
               <li>
-                <a href="#">FAQ</a>
+                <a href="error">FAQ</a>
               </li>
               <li>
-                <a href="#">Legal</a>
+                <a href="error">Legal</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="error">Contact</a>
               </li>
             </ul>
 
@@ -41,27 +41,27 @@ export default function Footer() {
               <h3>Stay in touch</h3>
               <ul className="list-unstyled">
                 <li className="in">
-                  <a href="#">
+                  <a href="error">
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                 </li>
                 <li className="fb">
-                  <a href="#">
+                  <a href="error">
                     <i className="fa-brands fa-facebook-square"></i>
                   </a>
                 </li>
                 <li className="tw">
-                  <a href="#">
+                  <a href="error">
                     <i className="fa-brands fa-twitter"></i>
                   </a>
                 </li>
                 <li className="yt">
-                  <a href="#">
+                  <a href="error">
                     <i className="fa-brands fa-youtube"></i>
                   </a>
                 </li>
                 <li className="ln">
-                  <a href="#">
+                  <a href="error">
                     <i className="fa-brands fa-linkedin"></i>
                   </a>
                 </li>

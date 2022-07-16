@@ -1,6 +1,6 @@
 import Logo from "../img/ayushLogo.png";
-import React from "react";
-
+import React, { useContext } from "react";
+import { UserContext } from "../App";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -41,19 +41,34 @@ export default function Navbar() {
                 Contact
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signin">
-                Sign In
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signout">
-                Sign Out
-              </Link>
-            </li>
+            <SignInOut />
           </ul>
         </div>
       </div>
     </nav>
   );
+}
+function SignInOut() {
+  const { state, dispatch } = useContext(UserContext);
+  if (state) {
+    return (
+      <>
+        <li className="nav-item">
+          <Link className="nav-link" to="/signin">
+            Sign In
+          </Link>
+        </li>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <li className="nav-item">
+          <Link className="nav-link" to="/signout">
+            Sign Out
+          </Link>
+        </li>
+      </>
+    );
+  }
 }

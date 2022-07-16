@@ -1,10 +1,12 @@
 import Login from "../../img/log.svg";
 import Register from "../../img/register.svg";
 import "./signin_signup.css";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../App";
 
 export default function SigninSignup() {
+  const { state, dispatch } = useContext(UserContext);
   //for navigate to other route
   const navigate = useNavigate();
 
@@ -48,12 +50,13 @@ export default function SigninSignup() {
     } else {
       window.alert(data.message);
       console.log("successful registration");
+
       //setting all value to empty
       setUser({
         name: "",
         email: "",
         phone: "",
-        work: "not working",
+        work: "",
         password: "",
         cpassword: "",
       });
@@ -86,6 +89,8 @@ export default function SigninSignup() {
     } else {
       window.alert(data.message);
       console.log(data.message);
+      //setting dispatch to false to render singout
+      dispatch({ type: "toggle", payload: false });
       //setting all value to empty
       checkUser({ email: "", password: "" });
       navigate("/");
@@ -259,8 +264,8 @@ export default function SigninSignup() {
           <div className="content">
             <h3>One of us ?</h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
+              "Once again...welcome to my house. Come freely. Go safely; and
+              leave something of the happiness you bring."
             </p>
             <button
               className="btn transparent"
@@ -276,8 +281,8 @@ export default function SigninSignup() {
           <div className="content">
             <h3>New here ?</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
+              "Welcome to those who believe in the power of dreams and who would
+              like to join me in my exploration of life."
             </p>
             <button
               className="btn transparent"

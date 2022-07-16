@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./about.css";
 import { useNavigate } from "react-router-dom";
 export default function About() {
+  const [toggleAbout, setToggleAbout] = useState(true);
   const [userData, setData] = useState({ name: "" });
   const navigate = useNavigate();
 
@@ -34,110 +35,193 @@ export default function About() {
 
   return (
     <>
-      <section className="section about-section gray-bg" id="about">
-        <div className="container">
-          <div className="row align-items-center flex-row-reverse">
-            <div className="col-lg-6">
-              <div className="about-text go-to">
-                <h6 className="theme-color lead">
-                  A Lead UX &amp; UI designer based in Canada
-                </h6>
-                <h6 className="theme-color lead">{userData.name}</h6>
-                <p>
-                  I <mark>design and develop</mark> services for customers of
-                  all sizes, specializing in creating stylish, modern websites,
-                  web services and online stores. My passion is to design
-                  digital user experiences through the bold interface and
-                  meaningful interactions.
-                </p>
-                <div className="row about-list">
-                  <div className="col-md-6">
-                    <div className="media">
-                      <label>Birthday</label>
-                      <p>4th april 1998</p>
-                    </div>
-                    <div className="media">
-                      <label>Age</label>
-                      <p>22 Yr</p>
-                    </div>
-                    <div className="media">
-                      <label>Residence</label>
-                      <p>Canada</p>
-                    </div>
-                    <div className="media">
-                      <label>Address</label>
-                      <p>California, USA</p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="media">
-                      <label>E-mail</label>
-                      <p>info@domain.com</p>
-                    </div>
-                    <div className="media">
-                      <label>Phone</label>
-                      <p>820-885-3321</p>
-                    </div>
-                    <div className="media">
-                      <label>Skype</label>
-                      <p>skype.0404</p>
-                    </div>
-                    <div className="media">
-                      <label>Freelance</label>
-                      <p>Available</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="about-avatar">
+      <div class="container emp-profile">
+        <form method="post">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="profile-img">
                 <img
-                  src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                  title=""
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
                   alt=""
                 />
-              </div>
-            </div>
-          </div>
-          <div className="counter">
-            <div className="row">
-              <div className="col-6 col-lg-3">
-                <div className="count-data text-center">
-                  <h6 className="count h2" data-to="500" data-speed="500">
-                    500
-                  </h6>
-                  <p className="m-0px font-w-600">Happy Clients</p>
-                </div>
-              </div>
-              <div className="col-6 col-lg-3">
-                <div className="count-data text-center">
-                  <h6 className="count h2" data-to="150" data-speed="150">
-                    150
-                  </h6>
-                  <p className="m-0px font-w-600">Project Completed</p>
-                </div>
-              </div>
-              <div className="col-6 col-lg-3">
-                <div className="count-data text-center">
-                  <h6 className="count h2" data-to="850" data-speed="850">
-                    850
-                  </h6>
-                  <p className="m-0px font-w-600">Photo Capture</p>
-                </div>
-              </div>
-              <div className="col-6 col-lg-3">
-                <div className="count-data text-center">
-                  <h6 className="count h2" data-to="190" data-speed="190">
-                    190
-                  </h6>
-                  <p className="m-0px font-w-600">Telephonic Talk</p>
+                <div class="file btn btn-lg btn-primary">
+                  Change Photo
+                  <input type="file" name="file" />
                 </div>
               </div>
             </div>
+            <div class="col-md-6">
+              <div class="profile-head">
+                <h5>{userData.name}</h5>
+                <h6>Web Developer and Designer</h6>
+                <p class="proile-rating">
+                  RANKINGS : <span>8/10</span>
+                </p>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <button
+                      type="submit"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setToggleAbout(true);
+                      }}
+                    >
+                      About
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      type="submit"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setToggleAbout(false);
+                      }}
+                    >
+                      Timeline
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <input
+                type="submit"
+                class="profile-edit-btn"
+                name="btnAddMore"
+                value="Edit Profile"
+              />
+            </div>
           </div>
-        </div>
-      </section>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="profile-work">
+                <p>WORK LINK</p>
+                <a href="">Website Link</a>
+                <br />
+                <a href="">Bootsnipp Profile</a>
+                <br />
+                <a href="">Bootply Profile</a>
+                <p>SKILLS</p>
+                <a href="">Web Designer</a>
+                <br />
+                <a href="">Web Developer</a>
+                <br />
+                <a href="">WordPress</a>
+                <br />
+                <a href="">WooCommerce</a>
+                <br />
+                <a href="">PHP, .Net</a>
+                <br />
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="tab-content profile-tab" id="myTabContent">
+                <div
+                  class={toggleAbout ? "show " : "fade show"}
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
+                >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>User Id</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{userData._id}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Name</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{userData.name}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Email</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{userData.email}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Phone</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{userData.phone}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Profession</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{userData.work}</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class={toggleAbout ? "fade" : "show"}
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Experience</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>Expert</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Hourly Rate</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>10$/hr</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Total Projects</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>230</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>English Level</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>Expert</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Availability</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>6 months</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>Your Bio</label>
+                      <br />
+                      <p>Your detail description</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

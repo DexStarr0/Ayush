@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../App";
+
 export default function Home() {
+  const { state, dispatch } = useContext(UserContext);
   useEffect(() => {
     homeData();
   }, []);
-  const [seeYouBack, setSeeYouBack] = useState(false);
+  const [seeYouMsg, setseeYouMsg] = useState(false);
   const [user, setUser] = useState({ name: "" });
   //getting the user data from server
   const homeData = async () => {
@@ -16,14 +19,16 @@ export default function Home() {
 
       const data = await response.json();
       if (response.status !== 200) {
-        //updationg setSeeYouBack to false as user does not exit in database
-        setSeeYouBack(false);
+        //updationg setseeYouMsg to false as user does not exit in database
+        setseeYouMsg(false);
         throw new Error(data.error);
       }
       //updating user data in user hook
       setUser({ ...user, name: data.name });
-      //updationg setSeeYouBack to true as user exit in database
-      setSeeYouBack(true);
+      //setting dispatch to false to render singout
+      dispatch({ type: "toggle", payload: false });
+      //updationg setseeYouMsg to true as user exit in database
+      setseeYouMsg(true);
     } catch (error) {
       console.log(error);
     }
@@ -40,7 +45,7 @@ export default function Home() {
                   Welcome {user.name} To Our World
                 </h1>
                 <p class="lead text-white-50 mb-4">
-                  {seeYouBack
+                  {seeYouMsg
                     ? `How are you? It really is great to see you. I’ve missed your presence around here. Yay!`
                     : `“In order to write about life first you must live it.” – Ernest Hemingway`}
                 </p>
