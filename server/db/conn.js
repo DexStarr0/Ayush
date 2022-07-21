@@ -8,9 +8,7 @@ mongoose.connect(
   DB,
   {
     useNewUrlParser: true,
-    // useCreateIndex: true,
     useNewUrlParser: true,
-    // useFindAndModify: false,
   },
   (err) => {
     if (!err) {
@@ -20,18 +18,3 @@ mongoose.connect(
     }
   }
 );
-
-//database connect
-
-// mongoose
-//   .connect(DB, {
-//     useNewUrlParser: true,
-//     useNewUrlParser: true,
-//   })
-//   .then(() => {
-//     console.log("connection successful");
-//   })
-//   .catch((err) => {
-//     console.log("not working");
-//   });
-// export

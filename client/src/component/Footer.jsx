@@ -17,23 +17,16 @@ export default function Footer() {
               <li>
                 <a href="error">About</a>
               </li>
-              <li>
-                <a href="error">Services</a>
-              </li>
-              <li>
-                <a href="error">Press</a>
-              </li>
+
               <li>
                 <a href="error">Careers</a>
               </li>
               <li>
-                <a href="error">FAQ</a>
+                <a href="error">FAQs</a>
               </li>
+
               <li>
-                <a href="error">Legal</a>
-              </li>
-              <li>
-                <a href="error">Contact</a>
+                <a href="error">Contact Us</a>
               </li>
             </ul>
 
